@@ -9,6 +9,12 @@ mobileMenu.addEventListener('click', () => {
         : '<i class="fas fa-bars"></i>';
 });
 
+// Header Scroll Effect
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('.header');
+    header.classList.toggle('scrolled', window.scrollY > 50);
+});
+
 // Counter Animation
 const counters = document.querySelectorAll('.counter-number');
 const speed = 200;
@@ -33,7 +39,7 @@ counters.forEach(counter => {
             updateCount();
             observer.disconnect();
         }
-    }, { threshold: 0.5 });
+    }, { threshold: 0.6 });
 
     observer.observe(counter);
 });
